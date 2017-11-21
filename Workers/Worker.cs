@@ -35,6 +35,7 @@ namespace netcoreCdn
             CloudBlobContainer container = blobClient.GetContainerReference(ContainerName);
             if (!await container.CreateIfNotExistsAsync())
             {
+                Console.WriteLine("Cannot create container");
 
             }
             return container;
@@ -42,7 +43,7 @@ namespace netcoreCdn
 
         public async Task DoWork()
         {
-              var container = await GetCdnContainer();
+            var container = await GetCdnContainer();
             var listOfFIles = GetListOfFiles();
 
             foreach (var cndFile in listOfFIles)
