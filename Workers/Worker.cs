@@ -10,7 +10,7 @@ namespace netcoreCdn
 {
     internal class UploadFilesWorker : IWorker
     {
-        const string connectionString = "DefaultEndpointsProtocol=https;AccountName=dev1sa1sureal;AccountKey=H5/xD8V7ySCJXDcn1OaCKdaBJ376F9RTTdcbPMI7Bfyt+NuxMoD/nxHE0dY8s687rocK8V8GInpaTqdoMIm58A==;EndpointSuffix=core.windows.net";
+        const string connectionString = "DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1";
 
         private IEnumerable<CdnFile> GetListOfFiles()
         {
@@ -26,7 +26,6 @@ namespace netcoreCdn
         {
             // Retrieve storage account information from connection string
             CloudStorageAccount storageAccount = CloudStorageAccount.Parse(connectionString);
-
             // Create a blob client for interacting with the blob service.
             CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
 
